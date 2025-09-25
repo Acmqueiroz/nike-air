@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Adaptação para React */
+.app-body {
+  position: relative;
+  padding: 20px 160px;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  z-index: 1;
 }
+
+/* Background overlay fixo */
+.app-body::before {
+  content: '';
+  background: #202020;
+  position: absolute;
+  top: 0;
+  left: -600px;
+  transform: rotate(-70deg);
+  width: 100%;
+  height: 120%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Texto Nike de fundo */
+.app-body::after {
+  content: 'Nike';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 250px;
+  font-weight: bold;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* o restante você já mandou, mantenha tudo igual */
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 80px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4 {
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 80px;
 }
 
-.card {
-  padding: 2em;
+p {
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 
-.read-the-docs {
-  color: #888;
+.botao-carrinho {
+  background: #a3be52;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.botao-carrinho:hover {
+  opacity: 0.7;
+}
+
+.imagem-tenis {
+  width: 800px;
+  transform: rotate(-25deg);
+  filter: drop-shadow(30px 45px 40px #161616);
+  transition: 1s;
+}
+
+.troca-efeito {
+  opacity: 0;
+  transform: rotate(-25deg) translateY(-30px);
+}
+
+.caixa-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75%;
+  position: relative;
+  z-index: 2;
+}
+
+.caixa-texto {
+  max-width: 500px;
+}
+
+.caixa-botoes {
+  z-index: 3;
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+.botoes {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.botoes:active {
+  opacity: 0.6;
+}
+
+.verde {
+  background: #ccee66;
+}
+
+.azul {
+  background: #58cced;
+}
+
+.rosa {
+  background: #ff9eb5;
 }
